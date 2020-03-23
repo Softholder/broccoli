@@ -1,32 +1,38 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <header-bar />
+    <div class="main">
+      <router-view></router-view>
     </div>
-    <router-view />
+    <footer-bar />
   </div>
 </template>
 
+<script>
+import HeaderBar from "@/components/Header.vue";
+import FooterBar from "@/components/Footer.vue";
+
+export default {
+  components: {
+    HeaderBar,
+    FooterBar
+  }
+};
+</script>
+
 <style>
+body {
+  margin: 0;
+  padding: 0;
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  overflow: hidden;
 }
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+.main {
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+  top: 50px;
+  bottom: 50px;
 }
 </style>
