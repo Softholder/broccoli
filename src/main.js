@@ -1,7 +1,7 @@
 import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
-import { Button, Row, Col, Dialog, Form, Input } from "element-ui";
+import { Button, Row, Col, Dialog, Form, FormItem, Input } from "element-ui";
 
 Vue.config.productionTip = false;
 
@@ -11,6 +11,7 @@ Vue.use(Row);
 Vue.use(Col);
 Vue.use(Dialog);
 Vue.use(Form);
+Vue.use(FormItem);
 Vue.use(Input);
 
 new Vue({

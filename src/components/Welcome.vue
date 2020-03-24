@@ -10,7 +10,7 @@
         title="Request an invite"
         :visible.sync="formVisible"
         width="40%"
-        top="30vh"
+        top="25vh"
         center
         :show-close="false"
       >
@@ -31,7 +31,7 @@
             ></el-input>
           </el-form-item>
         </el-form>
-        <el-button style="width:100%; margin-top: 50px" @click="sendRequest()">
+        <el-button style="width:100%; margin: 30px 0;" @click="sendRequest()">
           {{ send }}
         </el-button>
       </el-dialog>
