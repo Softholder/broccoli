@@ -1,5 +1,5 @@
 <template>
-  <div class="welcome">
+  <div class="appmain">
     <div class="content">
       <h1>A better way to enjoy every day.</h1>
       <span>Be the first to know when we launch.</span>
@@ -7,13 +7,16 @@
     </div>
     <div class="form">
       <el-dialog
-        title="Request an invite"
         :visible.sync="formVisible"
-        width="40%"
+        width="60%"
         top="25vh"
         center
         :show-close="false"
       >
+        <h2>
+          <i>Request an invite</i>
+        </h2>
+        <div class="line"></div>
         <el-form :model="form" :rules="rules" ref="form">
           <el-form-item prop="fullName">
             <el-input
@@ -41,6 +44,27 @@
         <div class="error" v-if="error">{{ error }}</div>
       </el-dialog>
     </div>
+    <div>
+      <el-dialog
+        :visible.sync="tipVisible"
+        width="50%"
+        top="30vh"
+        center
+        :show-close="false"
+      >
+        <div class="tip">
+          <h2>
+            <i>All done!</i>
+          </h2>
+          <div class="line"></div>
+          <span>
+            You will be one of the first to experience Broccoli & Co. when we
+            launch.
+          </span>
+          <el-button class="button" @click="closeTip">OK</el-button>
+        </div>
+      </el-dialog>
+    </div>
   </div>
 </template>
 
@@ -59,6 +83,7 @@ export default {
     };
     return {
       formVisible: false,
+      tipVisible: false,
       buttonText: "Send",
       loading: false,
       form: {
@@ -75,7 +100,7 @@ export default {
           },
           {
             min: 3,
-            message: "Full name needs to be at least 3 characters long",
+            message: "Full name at least 3 characters long",
             trigger: "blur"
           }
         ],
@@ -87,7 +112,7 @@ export default {
           },
           {
             type: "email",
-            message: "Email needs to be in validation email format",
+            message: "Email needs to be in correct format",
             trigger: ["blur", "change"]
           }
         ],
@@ -104,11 +129,8 @@ export default {
   methods: {
     openForm() {
       this.formVisible = true;
-      console.log("open");
     },
     sendRequest() {
-      //   this.formVisible = false;
-      //   console.log("close");
       this.error = "";
       this.loading = true;
       this.buttonText = "Sending, please wait...";
@@ -124,17 +146,17 @@ export default {
         data: JSON.stringify(data)
       })
         .then(res => {
-          console.log(res);
           this.loading = false;
           this.buttonText = "Send";
           if (res.status === 200) {
+            this.formVisible = false;
+            this.tipVisible = true;
             console.log(res.data);
           } else {
             console.log(res.statusText);
           }
         })
         .catch(error => {
-          console.log(error);
           this.loading = false;
           this.buttonText = "Send";
           this.error = error;
@@ -149,13 +171,16 @@ export default {
           return false;
         }
       });
+    },
+    closeTip() {
+      this.tipVisible = false;
     }
   }
 };
 </script>
 
 <style scoped>
-.welcome {
+.appmain {
   height: 100%;
   display: flex;
   justify-content: center;
@@ -168,6 +193,16 @@ span {
   display: block;
   margin: 20px;
 }
+h2 {
+  margin: -20px auto 15px;
+  text-align: center;
+}
+.line {
+  width: 7%;
+  height: 0;
+  border: 1px solid #000000;
+  margin: 0 auto 30px;
+}
 .error {
   color: red;
   text-align: center;
@@ -175,5 +210,9 @@ span {
 .button {
   width: 100%;
   margin: 30px 0;
+}
+.tip {
+  width: 80%;
+  margin: 0 auto;
 }
 </style>

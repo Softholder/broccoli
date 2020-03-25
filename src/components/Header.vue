@@ -1,16 +1,18 @@
 <template>
-  <header class="head">BROCCOLI & CO.</header>
+  <header class="head">
+    <h2>BROCCOLI & CO.</h2>
+  </header>
 </template>
 
 <style scoped>
 .head {
-  height: 50px;
+  height: 100px;
   width: 100%;
   position: fixed;
   top: 0;
   text-align: left;
   border-bottom: 1px solid black;
-  line-height: 50px;
-  padding-left: 100px;
+  line-height: 60px;
+  padding-left: 50px;
 }
 </style>

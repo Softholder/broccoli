@@ -2,7 +2,7 @@
   <div id="app">
     <header-bar />
     <div class="main">
-      <welcome />
+      <app-main />
     </div>
     <footer-bar />
   </div>
@@ -10,13 +10,13 @@
 
 <script>
 import HeaderBar from "@/components/Header.vue";
-import Welcome from "@/components/Welcome.vue";
+import AppMain from "@/components/AppMain.vue";
 import FooterBar from "@/components/Footer.vue";
 
 export default {
   components: {
     HeaderBar,
-    Welcome,
+    AppMain,
     FooterBar
   }
 };
