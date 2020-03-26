@@ -151,9 +151,8 @@ export default {
           if (res.status === 200) {
             this.formVisible = false;
             this.tipVisible = true;
-            console.log(res.data);
           } else {
-            console.log(res.statusText);
+            this.error = res.statusText;
           }
         })
         .catch(error => {
@@ -167,7 +166,6 @@ export default {
         if (valid) {
           this.sendRequest();
         } else {
-          console.log("error submit");
           return false;
         }
       });
@@ -212,7 +210,7 @@ h2 {
   margin: 30px 0;
 }
 .tip {
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
 }
 </style>
