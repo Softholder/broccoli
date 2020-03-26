@@ -4,7 +4,7 @@
   </header>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .head {
   height: 100px;
   width: 100%;

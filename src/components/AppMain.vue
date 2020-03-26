@@ -5,7 +5,7 @@
       <span>Be the first to know when we launch.</span>
       <el-button @click="openForm">Request an invite</el-button>
     </div>
-    <div class="form">
+    <div>
       <el-dialog
         :visible.sync="formVisible"
         width="60%"
@@ -177,40 +177,47 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .appmain {
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.content {
-  text-align: center;
-}
-span {
-  display: block;
-  margin: 20px;
-}
-h2 {
-  margin: -20px auto 15px;
-  text-align: center;
-}
-.line {
-  width: 7%;
-  height: 0;
-  border: 1px solid #000000;
-  margin: 0 auto 30px;
-}
-.error {
-  color: red;
-  text-align: center;
-}
-.button {
-  width: 100%;
-  margin: 30px 0;
-}
-.tip {
-  width: 90%;
-  margin: 0 auto;
+
+  .content {
+    text-align: center;
+  }
+
+  span {
+    display: block;
+    margin: 20px;
+  }
+
+  h2 {
+    margin: -20px auto 15px;
+    text-align: center;
+  }
+
+  .line {
+    width: 7%;
+    height: 0;
+    border: 1px solid #000000;
+    margin: 0 auto 30px;
+  }
+
+  .error {
+    color: red;
+    text-align: center;
+  }
+
+  .button {
+    width: 100%;
+    margin: 30px 0;
+  }
+
+  .tip {
+    width: 90%;
+    margin: 0 auto;
+  }
 }
 </style>
