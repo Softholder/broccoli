@@ -69,6 +69,8 @@
 </template>
 
 <script>
+// import lodash on demond
+import { debounce } from "lodash";
 export default {
   data() {
     // confirmEmail check rules
@@ -161,7 +163,8 @@ export default {
           this.error = error;
         });
     },
-    submitForm(formName) {
+    // add debounce control, if continue to click within 500ms only submit once after clicking stops
+    submitForm: debounce(function(formName) {
       this.$refs[formName].validate(valid => {
         if (valid) {
           this.sendRequest();
@@ -169,7 +172,7 @@ export default {
           return false;
         }
       });
-    },
+    }, 500),
     closeTip() {
       this.tipVisible = false;
     }
