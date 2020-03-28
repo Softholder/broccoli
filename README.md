@@ -22,8 +22,12 @@ npm run build
 npm run lint
 ```
 
+# Access method
+1. Development mode: visit "http://localhost:8022" after running "npm run serve".
+2. Production mode: executing "npm run build" then enter dist directory, open "index.html" directly with your browser
+
 # Test cases
-Visit "http://localhost:8022" after running "npm run serve".   Click "Request an invite" to open a form and input values as follows, click "Send" to see the result.
+Click "Request an invite" to open a form and input values as follows, click "Send" to see the result.
 | No. | Full Name | Email | Confirm Email | Result |
 | ------ | ------ | ------ | ------ | ------ |
 | 1 | null | null | null | Prompt for input|
