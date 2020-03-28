@@ -22,7 +22,8 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+html,
 body {
   margin: 0;
   padding: 0;
@@ -32,14 +33,13 @@ body {
 #app {
   width: 100%;
   height: 100%;
-}
-.main {
-  margin: 0;
-  overflow: auto;
-  position: absolute;
-  top: 50px;
-  bottom: 50px;
-  left: 0;
-  right: 0;
+
+  .main {
+    width: 100%;
+    overflow: auto;
+    position: absolute;
+    top: 100px;
+    bottom: 100px;
+  }
 }
 </style>

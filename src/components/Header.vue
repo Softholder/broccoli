@@ -11,7 +11,7 @@
   position: fixed;
   top: 0;
   text-align: left;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #000000;
   line-height: 60px;
   padding-left: 50px;
 }
