@@ -2,7 +2,7 @@
 A simple single-page web application built with Vue and elementUI
 
 ## Project setup
-Install dependencies
+### Install dependencies
 ```
 npm install
 ```
