@@ -21,8 +21,6 @@ npm run build
 npm run lint
 ```
 
-### URL for the 
-
 ### Test cases
 Visit "http://localhost:8022" after running "npm run serve".   Click "Request an invite" to open a form and input values as follows, click "Send" to see the result.
 | No. | Full Name | Email | Confirm Email | Result |
