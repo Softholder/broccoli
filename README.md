@@ -22,7 +22,7 @@ npm run build
 npm run lint
 ```
 
-# Access method
+# Access methods
 1. Development mode: visit "http://localhost:8022" after running "npm run serve".
 2. Production mode: executing "npm run build" then enter dist directory, open "index.html" directly with your browser
 
